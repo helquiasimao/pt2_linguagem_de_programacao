@@ -1,0 +1,2 @@
+class ProdutoNaoEncontradoError(Exception):
+    pass

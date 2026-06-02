@@ -1,0 +1,2 @@
+class AutenticacaoInvalidaError(Exception):
+    pass
