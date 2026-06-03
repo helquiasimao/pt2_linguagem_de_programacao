@@ -1,4 +1,4 @@
-from app.database.db import SessionLocal
+"""from app.database.db import SessionLocal
 
 from app.database.models import (
     Produto,
@@ -29,5 +29,20 @@ print(
     db.query(MovimentoStock).count()
 )
 
-db.close()
+db.close()"""
 #depois da istalação, teste para vereficar se está tudo ok caro docente.
+
+from app.dao.produto_dao import ProdutoDAO
+
+dao = ProdutoDAO()
+
+produtos = dao.listar()
+
+print("TOTAL:", len(produtos))
+
+for p in produtos[:5]:
+    print(
+        p.id,
+        p.nome,
+        p.stock_atual
+    )

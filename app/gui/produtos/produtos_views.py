@@ -90,10 +90,16 @@ class ProdutosView(ctk.CTkFrame):
 
     def carregar_produtos(self):
 
+        print("CARREGAR PRODUTOS EXECUTADO")
+
         self.lista.delete(
             "1.0",
             "end"
         )
+
+        produtos = self.dao.listar()
+
+        print("TOTAL PRODUTOS:", len(produtos))
 
         produtos = self.dao.listar()
 
@@ -111,10 +117,12 @@ class ProdutosView(ctk.CTkFrame):
 
         self.lista.insert(
             "end",
-            "-" * 80 + "\n"
+            cabecalho
         )
 
         for produto in produtos:
+
+            print(produto.nome)
 
             preco = (
                 f"{produto.preco:,.2f} Kz"

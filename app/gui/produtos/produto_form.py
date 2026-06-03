@@ -129,6 +129,10 @@ class ProdutoForm(ctk.CTkToplevel):
 
         except Exception as erro:
 
+            import traceback
+
+            traceback.print_exc()
+
             messagebox.showerror(
                 "Erro",
                 str(erro)
